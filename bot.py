@@ -75,10 +75,7 @@ async def main():
     scheduler.add_job(auto_post, 'interval', hours=6, args=[app.bot])
     scheduler.start()
     
-    await app.initialize()
-    await app.start()
-    await app.updater.start_polling()
-    await asyncio.Event().wait()
+await app.run_polling()
 
 if __name__ == "__main__":
     asyncio.run(main())
