@@ -7,9 +7,10 @@ from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-BOT_TOKEN = "8669125268:AAFyc3vxinUZYytPPV-32_kex-n8OGF7Rl4"
-CHANNEL_ID = "-1003798983426"
-AFFILIATE_LINK = "https://s.click.aliexpress.com/e/_c3t8tGfL"
+import os
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+CHANNEL_ID = os.environ.get("CHANNEL_ID")
+AFFILIATE_LINK = os.environ.get("AFFILIATE_LINK")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
